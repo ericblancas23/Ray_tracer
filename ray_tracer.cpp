@@ -1,6 +1,8 @@
 #include <fstream>
 #include <cmath>
 
+
+//defining vectors
 struct Vec3 {
     double x, y, z;
     Vec3(double x, double y, double z) : x(x), y(y), z(z) {}
@@ -14,15 +16,19 @@ struct Vec3 {
     }
 };
 
+//setting dots as doubles
 inline double dot(const Vec3& a, const Vec3& b) {
     return (a.x*b.x + a.y*b.y + a.z*b.z);
 };
 
+//constructing ray implementations
 struct Ray {
-    Vec3, o,d;
+    Vec3 o,d;
     Ray(const Vec3& o, const Vec3& d) : o(o), d(d) {}
 };
 
+
+//constructing sphere
 struct Sphere {
     Vec3 c;
     double r;
@@ -44,6 +50,7 @@ struct Sphere {
     }
 };
 
+//making sure the col and Vec are postioned correctly
 void clamp225(Vec3& col) {
     col.x = (col.x > 255) ? 255 : (col.x < 0) ? 0 : col.x;
     col.y = (col.y > 255) ? 255 : (col.y < 0) ? 0 : col.y;

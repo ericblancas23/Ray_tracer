@@ -31,11 +31,11 @@ struct Sphere {
     bool intersect(const Ray& ray, double &t) {
         const Vec3 o = ray.o;
         const Vec3 d = ray.d;
-		const Vec3 oc  o - c;
+		const Vec3 oc = o - c;
 		const double b = 2 * dot(oc, d);
 		const double c = dot(oc, oc) - r*r;
 		double disc = b*b - 4 * c;
-		if (disc < ie-4) return false;
+		if (disc < 1e-4) return false;
 		    disc = sqrt(disc);
 		const double t0=-b - disc;
 		const double t1 = -b + disc;
@@ -44,3 +44,18 @@ struct Sphere {
     }
 };
 
+void clamp225(Vec3& col) {
+    col.x = (col.x > 255) ? 255 : (col.x < 0) ? 0 : col.x;
+    col.y = (col.y > 255) ? 255 : (col.y < 0) ? 0 : col.y;
+    col.z = (col.z > 255) ? 255 : (col.z < 0) ? 0 : col.z;
+}
+
+int main() {
+    const int H = 500;
+    const int W = 500;
+
+    const Vec3 white(255, 255, 255);
+    const Vec3 black(0, 0, 0);
+    const Vec3 red(255, 0, 0);
+
+}

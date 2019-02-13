@@ -66,11 +66,19 @@ int main() {
     const Vec3 red(255, 0, 0);
 
     const Sphere sphere(Vec3(W*0.5, H*0.5, 50), 50);
-    const Sphere light(Vec3(0, 0, 50). 1);
+    const Sphere light(Vec3(0, 0, 50), 1);
 
     std::ofstream out("out.ppm");
     out << "P3\n" << W << ' ' << H << ' ' << "255\n";
 
     double t;
     Vec3 pix_col(black);
+
+    // for(int y = 0; y < H; ++y) 
+    // {
+    //     for(int x = 0; x < W; ++x) 
+    //     {
+
+    //     }
+    // }
 }
